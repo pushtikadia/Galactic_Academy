@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Academy | 3D Mission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-layer">
+        <header>
+            <h1>Galactic Academy</h1>
+            <p>COMMAND: Click a planet to scan for data.</p>
+        </header>
+
+        <div id="info-panel" class="hidden">
+            <h2 id="info-title">Planet Name</h2>
+            <p id="info-fact">Loading data...</p>
+            <div class="activity-box">
+                <strong>⚡ Mission:</strong> <span id="info-activity">...</span>
+            </div>
+            <button onclick="closePanel()">Close Transmission</button>
+        </div>
+        
+        <div id="loader">Loading Solar Assets...</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
